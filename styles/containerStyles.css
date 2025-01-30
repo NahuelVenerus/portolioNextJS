@@ -1,0 +1,131 @@
+.main-container {
+  position: absolute;
+  width: 100vw;  
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 75%;
+  max-height: 75%;
+  gap: 40px;
+}
+
+.content-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 85%;
+  max-height: 85%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.border {
+  background-color: rgba(0, 0, 0, 0.6);
+  border: 10px solid;
+  border-radius: 20px;
+  height: 100%;
+  width: 80%;
+}
+
+.component-container{
+  height: 100%;
+}
+
+.top-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 50px;
+  transition: top 0.5s ease;
+  padding-top: 50px;
+}
+
+.language-change {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  transition: top 1s ease;
+  width: 145px;
+  color: pink;
+  font-size: 5vmin;
+  border: 5px solid pink;
+  border-radius: 15px;
+  padding: 10px;
+  z-index: 1;
+  text-decoration: none;
+}
+
+.language-change span {
+  font-size: 3vw;
+  text-transform: uppercase;
+  position: relative;
+  transition: 1s;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.language-change-selected {
+  transform: scale(1.2);
+}
+
+.language-change span:hover {
+  transform: scale(1.2);
+  transition: 0.5s;
+}
+
+.title{
+color: pink;
+font-size: 10vmin;
+padding-left: 5%;
+}
+
+.title-reduced {
+  color: pink;
+  font-size: 10vmin;
+  transform: scale(0.8);
+  padding-left: 0%
+}
+
+.subtitle{
+  color: pink;
+  font-size: 2.3em;
+  padding-left: 5.2%;
+}
+
+
+@media screen and (max-width: 800px) {
+  .top-section{
+    padding: 40px 20px 0 0;
+  }
+
+    .subtitle {
+    font-size: 1.7em;
+  }
+
+  .language-change {
+    margin-right: 5px;
+    width: 120px;
+  }
+  .language-change span {
+    font-size: 7vw;
+  }
+}
+
+@media screen and (max-height: 500px) {
+  .top-section{
+    padding: 0;
+  }
+
+  .subtitle {
+    font-size: 1.5em;
+  }
+
+  .language-change {
+    margin-right: 15px;
+    width: 120px;
+  }
+  .language-change span {
+    font-size: 4vw;
+  }
+}

@@ -1,3 +1,11 @@
+/* /styles/globals.css */
+@font-face {
+  font-family: "BigShouldersDisplay";
+  src: url("/fonts/BigShouldersDisplay-Bold.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -17,5 +25,5 @@
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "BigShouldersDisplay", sans-serif;
 }
