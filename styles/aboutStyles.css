@@ -31,7 +31,6 @@
   .scrollable {
     overflow-y: scroll;
     scrollbar-color: #E57373 #E57373;
-    margin: 0 10px;
   }
 }
 
@@ -40,7 +39,7 @@
     text-align: center;
     font-size: 2.5em;
     font-weight: bold;
-    margin: 0;
+    margin-top: 0px;
   }
   
   .inner-subtitle {
