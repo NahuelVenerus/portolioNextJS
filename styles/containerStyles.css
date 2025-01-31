@@ -37,7 +37,7 @@
   justify-content: space-between;
   padding-right: 50px;
   transition: top 0.5s ease;
-  padding-top: 50px;
+  margin-top: 12.5px;
 }
 
 .language-change {
@@ -50,7 +50,7 @@
   font-size: 5vmin;
   border: 5px solid pink;
   border-radius: 15px;
-  padding: 10px;
+  padding: 0 10px;
   z-index: 1;
   text-decoration: none;
 }
@@ -128,7 +128,7 @@ padding-left: 5%;
   .language-change span {
     font-size: 4vw;
   }
-  
+
   .border {    
   padding-bottom: 3%;
   }

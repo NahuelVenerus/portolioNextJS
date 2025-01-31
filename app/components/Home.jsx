@@ -106,7 +106,7 @@ const BackgroundChanger = () => {
           <div className={currentBackground === backgroundImage1 ? "title transition" : "title-reduced transition"} style={{ color: color }}>NAHUEL VENERUS</div>
           <div className="language-change"
             style={{ transition: "all 1s ease", borderColor: color, color: color, transform: `scale(${currentBackground !== backgroundImage1 ? 0.8 : 1})` }}>
-            <span className={language === "ES" ? "language-change-selected" : ""} onClick={() => changeLanguageUrl("ES")} style={{ paddingRight: "10px", textShadow: language === "ES" ? `0 0 0.5px ${color}, 0 0 10px ${color}, 0 0 10px ${color}` : ""}}>ES</span> |
+            <span className={language === "ES" ? "language-change-selected" : ""} onClick={() => changeLanguageUrl("ES")} style={{ paddingRight: "10px", textShadow: language === "ES" ? `0 0 0.5px ${color}, 0 0 10px ${color}, 0 0 10px ${color}` : ""}}>ES</span> <span style={{fontSize: "35px"}}>|</span>
             <span className={language === "EN" ? "language-change-selected" : ""} onClick={() => changeLanguageUrl("EN")} style={{ paddingLeft: "10px", textShadow: language === "EN" ? `0 0 0.5px ${color}, 0 0 10px ${color}, 0 0 10px ${color}` : ""}}>EN</span></div>
         </div>
         <div className="subtitle transition" style={{ opacity: subtitleInvisibility }}>{exportDictionary(language, "subtitle")}</div>
