@@ -3,7 +3,7 @@ import "../../styles/swiperStyles.css";
 
 const SwiperSlide = ({ image }) => {
   return (
-    <div style={{ marginRight: "15px" }}>
+    <div className="slide" style={{ marginRight: "15px" }}>
       <h2 className="project-name">{image.name}</h2>
       <div className="swiperBorder">
         <a href={image.link} target="_blank" rel="noopener noreferrer">

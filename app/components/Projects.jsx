@@ -21,10 +21,13 @@ const GeekCentralStoreMobile = `https://res.cloudinary.com/${cloudinaryCloudName
 
 export const Projects = ({ lang }) => {
   const [isMobile, setIsMobile] = useState(false);
+  const [isLandscape, setIsLandscape] = useState(false);
 
   const handleResize = debounce(() => {
-    setIsMobile(window.innerWidth <= 500);
+    setIsMobile(window.innerWidth < 500);
+    setIsLandscape(window.innerHeight < 500);
   }, 300);
+  
 
   useEffect(() => {
     handleResize();
@@ -62,7 +65,7 @@ export const Projects = ({ lang }) => {
     );
   }
 
-  const settings = {
+  const portraitSettings = {
     className: "swiper",
     infinite: false,
     slidesToShow: 1.1,
@@ -71,6 +74,19 @@ export const Projects = ({ lang }) => {
     prevArrow: <PrevArrow />,
     nextArrow: <NextArrow />,
   };
+
+  const landscapeSettings= {
+    className: "center",
+    centerMode: true,
+    infinite: false,
+    slidesToShow: 1,
+    speed: 500,
+    prevArrow: <PrevArrow />,
+    nextArrow: <NextArrow />,
+  };
+
+  // const settings = isLandscape ? landscapeSettings : portraitSettings;
+  const settings = landscapeSettings;
 
   return (
     <div className="swiper">
