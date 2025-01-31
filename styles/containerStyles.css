@@ -128,4 +128,8 @@ padding-left: 5%;
   .language-change span {
     font-size: 4vw;
   }
+  
+  .border {    
+  padding-bottom: 3%;
+  }
 }
