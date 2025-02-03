@@ -76,13 +76,13 @@
 
 .title{
 color: pink;
-font-size: 10vmin;
+font-size: 3em;
 padding-left: 5%;
 }
 
 .title-reduced {
   color: pink;
-  font-size: 10vmin;
+  font-size: 2em;
   transform: scale(0.8);
   padding-left: 0%
 }
@@ -94,15 +94,19 @@ padding-left: 5%;
 }
 
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 800px) {  
   .top-section{
     padding: 40px 20px 0 0;
   }
-
-    .subtitle {
+  
+  .title {
+    font-size: 2em;
+  }
+  
+  .subtitle {
     font-size: 1.7em;
   }
-
+  
   .language-change {
     margin-right: 5px;
     width: 120px;
@@ -116,7 +120,7 @@ padding-left: 5%;
   .top-section{
     padding: 0;
   }
-
+  
   .subtitle {
     font-size: 1.5em;
   }
