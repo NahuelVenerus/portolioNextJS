@@ -24,7 +24,7 @@ export const About = ({ lang, isHidden }) => {
               tecnología, no dudes en contactarme a través de la sección de
               CONTACTAME!
             </p><br/>
-            <p>¡Gracias por visitar mi portfolio!</p>
+            <p>¡Gracias por visitar mi portfolio!</p><br/>
           </>
         ) : (
           <>
@@ -42,7 +42,7 @@ export const About = ({ lang, isHidden }) => {
               If you have an interesting project in mind or want to chat about technology,
               feel free to reach out through the CONTACT ME section!
             </p><br/>
-            <p>Thank you for visiting my portfolio!</p>
+            <p>Thank you for visiting my portfolio!</p><br/>
           </>
       )}
       </div>

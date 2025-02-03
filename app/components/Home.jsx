@@ -12,6 +12,7 @@ import { Projects } from "./Projects";
 import { Contact } from "./Contact";
 import { Cloudinary } from "@cloudinary/url-gen";
 import { exportDictionary } from "../../dictionary";
+import { debounce } from "lodash";
 
 const cloudinaryCloudName = process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME;
 
@@ -29,9 +30,10 @@ let backgroundImage5 =
 
 const BackgroundChanger = () => {
   const dispatch = useDispatch();
+  const [isLandscape, setIsLandscape] = useState(false);
   const color = useSelector((state) => state.color);
   const [currentBackground, setCurrentBackground] = useState(backgroundImage1);
-  const [top, setTop] = useState("85%");
+  const [top, setTop] = useState(isLandscape ? "75%" : "85%");
   const [isHidden, setIsHidden] = useState(1);
   const [isNavbarHidden, setIsNavbarHidden] = useState(1);
   const [currentContent, setCurrentContent] = useState("");
@@ -42,8 +44,22 @@ const BackgroundChanger = () => {
     setCurrentBackground(newBackground);
   };
 
+    const handleResize = debounce(() => {
+      setIsLandscape(window.innerHeight < 400);
+    }, 300);
+    
+  
+    useEffect(() => {
+      handleResize();
+      window.addEventListener("resize", handleResize);
+  
+      return () => {
+        window.removeEventListener("resize", handleResize);
+      };      
+    }, []);
+
   const handleNavbarClick = (content) => {
-    setTop("20%");
+    setTop(isLandscape ? "15%" : "25%");
     setSubtitleInvisibility(0)
     if (currentContent !== content) {
       setIsHidden(0);
@@ -52,7 +68,7 @@ const BackgroundChanger = () => {
     } else {
       dispatch(setColor("pink"));
       handleBackgroundChange(backgroundImage1);
-      setTop("85%");
+      setTop(isLandscape ? "75%" : "85%");
       setSubtitleInvisibility(1)
       setTimeout(() => setCurrentContent(""), 500);
     }
@@ -102,7 +118,7 @@ const BackgroundChanger = () => {
       }}
     >
       <div>
-        <div className="top-section">
+        <div className="top-section" style={{ transition: "all 1s ease", opacity: isLandscape ? subtitleInvisibility : 1 }}>
           <div className={currentBackground === backgroundImage1 ? "title transition" : "title-reduced transition"} style={{ color: color }}>NAHUEL VENERUS</div>
           <div className="language-change"
             style={{ transition: "all 1s ease", borderColor: color, color: color, transform: `scale(${currentBackground !== backgroundImage1 ? 0.8 : 1})` }}>
@@ -155,7 +171,7 @@ const BackgroundChanger = () => {
           </div>
         </nav>
 
-        <div className="content-container">
+        <div className="content-container" style={{marginTop: (isLandscape ? "1%" : "0%")}}>
           <div className="border">
           {currentContent === "About" && <div className="component-container" style={{transition: "all 1s ease", opacity: isHidden}}><About lang={language}/></div>}
             {currentContent === "Skills" && <div className="component-container" style={{transition: "all 1s ease", opacity: isHidden}}><Skills lang={language}/></div>}

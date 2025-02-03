@@ -85,8 +85,7 @@ export const Projects = ({ lang }) => {
     nextArrow: <NextArrow />,
   };
 
-  // const settings = isLandscape ? landscapeSettings : portraitSettings;
-  const settings = landscapeSettings;
+  const settings = isLandscape ? landscapeSettings : portraitSettings;
 
   return (
     <div className="swiper">
