@@ -7,7 +7,7 @@
 
 .skill-subtitle {
   font-size: 1.3em;
-  margin: 20px 0 25px 0;
+  margin: 10px 0 10px 0;
 }
 
 .skill-column {
@@ -21,7 +21,7 @@
   display: flex;
   align-items: flex-start;
   flex-direction: column;
-  gap: 12px;
+  gap: 10px;
 }
 
 .skill-row {
@@ -71,7 +71,6 @@
   }
 }
 
-
 @media screen and (max-width: 1000px) and (max-height: 500px) {
   .skills-container {
     display: grid;
@@ -102,4 +101,36 @@
     margin-right: 10px;
   }
   
+}
+
+@media screen and (max-height: 800px) {
+  .skills-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    justify-items: center;
+  }
+
+  .skill-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .skills-wrapper {
+    width: 100%;
+  }
+
+  .skills-column-items {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  .skill-row {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+  }
 }
