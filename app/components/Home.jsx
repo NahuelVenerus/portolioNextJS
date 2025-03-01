@@ -118,7 +118,7 @@ const BackgroundChanger = () => {
       }}
     >
       <div>
-        <div className="top-section" style={{ transition: "all 1s ease", opacity: isLandscape ? subtitleInvisibility : 1 }}>
+        <div className="top-section">
           <div className={currentBackground === backgroundImage1 ? "title transition" : "title-reduced transition"} style={{ color: color }}>NAHUEL VENERUS</div>
           <div className="language-change"
             style={{ transition: "all 1s ease", borderColor: color, color: color, transform: `scale(${currentBackground !== backgroundImage1 ? 0.8 : 1})` }}>
@@ -171,7 +171,7 @@ const BackgroundChanger = () => {
           </div>
         </nav>
 
-        <div className="content-container" style={{marginTop: (isLandscape ? "1%" : "0%")}}>
+        <div className="content-container">
           <div className="border">
           {currentContent === "About" && <div className="component-container" style={{transition: "all 1s ease", opacity: isHidden}}><About lang={language}/></div>}
             {currentContent === "Skills" && <div className="component-container" style={{transition: "all 1s ease", opacity: isHidden}}><Skills lang={language}/></div>}
