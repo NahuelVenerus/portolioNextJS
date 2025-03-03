@@ -6,7 +6,7 @@
 }
 
 .swiper-container{
-  width: 700px;
+  width: 40vw;
 }
 
 .swiperBorder {
@@ -20,14 +20,15 @@
   overflow: hidden;
 }
 
+.slick-center {
+  transform: scale(1) !important;
+}
+
 .slick-slide {
   transform: scale(0.8);
   transition: transform 0.5s ease;
 }
 
-.slick-center {
-  transform: scale(1);
-}
 
 @media screen and (max-width: 500px) {
   .swiper {
@@ -38,7 +39,7 @@
   }
   
   .swiper-container{
-    width: 70%;
+    width: 35vh;
   }
   
   .swiperBorder {

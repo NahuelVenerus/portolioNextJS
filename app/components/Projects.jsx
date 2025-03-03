@@ -24,8 +24,10 @@ export const Projects = ({ lang }) => {
   const [isLandscape, setIsLandscape] = useState(false);
 
   const handleResize = debounce(() => {
-    setIsMobile(window.innerWidth < 500);
-    setIsLandscape(window.innerHeight < 500);
+    const height = window.innerHeight;
+    const width = window.innerWidth;
+    setIsMobile(width < 500 && height > width);
+    setIsLandscape(height < 500 && height < width);
   }, 300);
   
 
@@ -65,22 +67,24 @@ export const Projects = ({ lang }) => {
     );
   }
 
-  const portraitSettings = {
+  const landscapeSettings = {
     className: "swiper",
+    centerMode: true,
     infinite: false,
-    slidesToShow: 1.1,
+    slidesToShow: 1,
     speed: 500,
     useCSS: true,
     prevArrow: <PrevArrow />,
     nextArrow: <NextArrow />,
   };
 
-  const landscapeSettings= {
+  const portraitSettings= {
     className: "center",
     centerMode: true,
     infinite: false,
     slidesToShow: 1,
     speed: 500,
+    arrows: false,    
     prevArrow: <PrevArrow />,
     nextArrow: <NextArrow />,
   };
@@ -93,7 +97,7 @@ export const Projects = ({ lang }) => {
       <div className="swiper-container">
         <Slider {...settings}>
           {images.map((image) => (
-            <SwiperSlide image={image} key={image} />
+            <SwiperSlide image={image} key={image.link} />
           ))}
         </Slider>
       </div>

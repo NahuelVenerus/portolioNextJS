@@ -59,7 +59,7 @@ const BackgroundChanger = () => {
     }, []);
 
   const handleNavbarClick = (content) => {
-    setTop(isLandscape ? "15%" : "25%");
+    setTop("20%");
     setSubtitleInvisibility(0)
     if (currentContent !== content) {
       setIsHidden(0);

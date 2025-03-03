@@ -71,39 +71,7 @@
   }
 }
 
-@media screen and (max-width: 1000px) and (max-height: 500px) {
-  .skills-container {
-    display: grid;
-    justify-items: center;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 40px;
-  }
-  
-  .skill-subtitle {
-    font-size: 1.5em;
-    margin: 0;
-  }
-  
-  .skills-column-items {
-    display: grid;
-    gap: 10px;
-    grid-template-columns: repeat(3, 1fr);
-  }
-  
-  .skill-row {
-    display: flex;
-    align-items: center;
-    font-size: 1.4em;
-  }
-  
-  .skill-icon {
-    font-size: 1.5em;
-    margin-right: 10px;
-  }
-  
-}
-
-@media screen and (max-height: 800px) {
+@media screen and (max-height: 700px) {
   .skills-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -133,4 +101,39 @@
     justify-content: flex-start;
     gap: 10px;
   }
+
+  .skill-icon {
+    font-size: 2em;
+  }
+}
+
+@media screen and (max-height: 600px) {
+  .skills-container {
+    display: grid;
+    justify-items: center;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 40px;
+  }
+  
+  .skill-subtitle {
+    font-size: 1.5em;
+    margin: 0;
+  }
+
+  .skills-column-items {
+    display: grid !important;
+    gap: 10px;
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+  
+  .skill-row {
+    display: flex;
+    align-items: center;
+    font-size: 1.4em;
+  }
+  
+  .skill-icon {
+    font-size: 1.5em;
+    margin-right: 10px;
+  }  
 }
