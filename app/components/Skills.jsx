@@ -31,6 +31,7 @@ export const Skills = ({ lang }) => {
     {icon: SiAmazon, name: "AWS"}, 
     {icon: DiScrum, name: "SCRUM"}
   ]
+  
   return (
     <>
       <h1 className="inner-title ">{exportDictionary(lang, "skills")}</h1>
