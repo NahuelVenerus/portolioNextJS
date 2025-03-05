@@ -12,19 +12,19 @@ export const About = ({ lang, isHidden }) => {
             <p>
               ¡Aquí encontrarás información sobre mí, las tecnologías que aprendí
               hasta el momento y los proyectos que realicé!
-            </p>
+            </p><br/>
             <p>
               En cuanto a mí, soy un apasionado Analista de Sistemas enfocado
               en el desarrollo e implementación de soluciones tecnológicas. Mi
               objetivo es crear aplicaciones web cautivadoras y funcionales que
               mejoren los procesos complejos y la vida de las personas.
-            </p>
+            </p><br/>
             <p>
               ¡Si tienes un proyecto interesante en mente o deseas conversar sobre
               tecnología, no dudes en contactarme a través de la sección de
               CONTACTAME!
             </p><br/>
-            <p>¡Gracias por visitar mi portfolio!</p><br/><br/>
+            <p>¡Gracias por visitar mi portfolio!</p><br/>
           </>
         ) : (
           <>
@@ -42,7 +42,7 @@ export const About = ({ lang, isHidden }) => {
               If you have an interesting project in mind or want to chat about technology,
               feel free to reach out through the CONTACT ME section!
             </p><br/>
-            <p>Thank you for visiting my portfolio!</p><br/><br/>
+            <p>Thank you for visiting my portfolio!</p><br/>
           </>
       )}
       </div>

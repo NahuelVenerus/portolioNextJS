@@ -6,7 +6,7 @@
 }
 
 .swiper-container{
-  width: 700px;
+  width: 40vw;
 }
 
 .swiperBorder {
@@ -14,10 +14,8 @@
   border-radius: 10px;
 }
 
-.project-name {
-  height: 25px;
-  margin: 5px 5px;
-  overflow: hidden;
+.slick-center {
+  transform: scale(1);
 }
 
 .slick-slide {
@@ -25,9 +23,32 @@
   transition: transform 0.5s ease;
 }
 
-.slick-center {
-  transform: scale(1);
+.text-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
+
+.project-name-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 15px 20px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+  border: 0.2em solid;
+  border-radius: 10px;
+}
+
+.project-name {
+  margin: 0;
+  padding: 10px;
+}
+
 
 @media screen and (max-width: 500px) {
   .swiper {
@@ -38,7 +59,7 @@
   }
   
   .swiper-container{
-    width: 70%;
+    width: 35vh;
   }
   
   .swiperBorder {

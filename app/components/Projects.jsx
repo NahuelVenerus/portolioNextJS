@@ -22,13 +22,18 @@ const GeekCentralStoreMobile = `https://res.cloudinary.com/${cloudinaryCloudName
 export const Projects = ({ lang }) => {
   const [isMobile, setIsMobile] = useState(false);
   const [isLandscape, setIsLandscape] = useState(false);
+  const [isTiny, setIsTiny] = useState(false);
 
   const handleResize = debounce(() => {
-    setIsMobile(window.innerWidth < 500);
-    setIsLandscape(window.innerHeight < 500);
+    const height = window.innerHeight;
+    const width = window.innerWidth;
+    setIsMobile(width < 500 && height > width);
+    setIsLandscape(height < 500 && height < width);
+    setIsTiny(height <= width / 2.15);
+    console.log("height: ", height, "width: ", width);
   }, 300);
+  console.log("is tiny: ", isTiny);
   
-
   useEffect(() => {
     handleResize();
     window.addEventListener("resize", handleResize);
@@ -65,22 +70,24 @@ export const Projects = ({ lang }) => {
     );
   }
 
-  const portraitSettings = {
+  const landscapeSettings = {
     className: "swiper",
+    centerMode: true,
     infinite: false,
-    slidesToShow: 1.1,
+    slidesToShow: 1,
     speed: 500,
     useCSS: true,
     prevArrow: <PrevArrow />,
     nextArrow: <NextArrow />,
   };
 
-  const landscapeSettings= {
+  const portraitSettings= {
     className: "center",
     centerMode: true,
     infinite: false,
     slidesToShow: 1,
     speed: 500,
+    arrows: false,    
     prevArrow: <PrevArrow />,
     nextArrow: <NextArrow />,
   };
@@ -92,11 +99,21 @@ export const Projects = ({ lang }) => {
       <h1 className="inner-title">{exportDictionary(lang, "projects")}</h1>
       <div className="swiper-container">
         <Slider {...settings}>
-          {images.map((image) => (
-            <SwiperSlide image={image} key={image} />
-          ))}
+          {images.map((image) =>
+            isTiny ? (
+              <div className="slide text-slide" key={image.link}>
+                <a href={image.link} target="_blank" rel="noopener noreferrer">
+                <div className="project-name-container">
+                  <h2 className="project-name">{image.name}</h2>
+                </div>
+              </a>
+              </div>
+            ) : (
+              <SwiperSlide image={image} key={image.link} />
+            )
+          )}
         </Slider>
       </div>
     </div>
   );
-};
+}  
